@@ -4,8 +4,7 @@
         "frontend:install": "cd udagram-frontend && npm install",
         "backend:install": "cd udagram-api && npm install",
         "frontend:build": "cd udagram-frontend && npm run build",
-        "backend:build": "cd reactnd-contacts-server && npm run build",
-        "frontend:deploy": "cd reactnd-contacts-complete && npm run deploy"
+        "backend:build": "cd reactnd-contacts-server && npm run build"
     },
     "devDependencies": {}
 }
