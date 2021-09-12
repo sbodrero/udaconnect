@@ -7,17 +7,16 @@ jobs:
     working_directory: ~/app/udagram-frontend
     executor: node/default
     steps:
-      - checkout:
+      - checkout
           path: ~/app
       - node/install-packages:
           app-dir: ~/app/udagram-frontend
       - run:
           name: Build Frontend
           command: npm run build
-      - aws-cli/install
       - run:
           name: Deploy Frontend
-          command: cmd && aws s3 cp --recursive --acl public-read ./www $S3_BUCKET_FRONTEND
+          command: aws s3 cp --recursive --acl public-read ./www $S3_BUCKET_FRONTEND
   server:
     working_directory: ~/app/udagram-api
     executor: node/default
@@ -32,7 +31,6 @@ jobs:
             npm run build
             printenv > www/.env
             npm run archive
-      - aws-cli/install
       - run:
           name: Deploy Server
           command: |-
