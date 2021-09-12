@@ -7,7 +7,7 @@ jobs:
     working_directory: ~/app/udagram-frontend
     executor: node/default
     steps:
-      - checkout
+      - checkout:
           path: ~/app
       - node/install-packages:
           app-dir: ~/app/udagram-frontend
