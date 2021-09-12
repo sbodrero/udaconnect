@@ -22,10 +22,7 @@ jobs:
           name: Front-End Build
           command: |
             npm run frontend:build
-      - run:
-          name: Front-End Deploy
-          run: |
-            echo "aws s3 cp --recursive --acl public-read ./build $AWS_BUCKET_NAME"
+      - run: echo "aws s3 cp --recursive --acl public-read ./build $AWS_BUCKET_NAME"
       - run:
           name: Back-End Build
           command: |
