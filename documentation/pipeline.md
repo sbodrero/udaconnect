@@ -14,11 +14,10 @@ Separated the workflow in frontend and backend.
     - FrontEnd Build    
     - FrontEnd Deploy  
 
-2 Backend.
-    - BackEnd Install
-    - BackEnd Build
-    - BackEnd Deploy
-
-## Schema
-
-![](../screenshots/pipeline.png)
+2 Backend:
+    - node/install  
+    - checkout    
+    - aws-elastic-beanstalk/setup  
+    - BackEnd Install  
+    - BackEnd Build  
+    - BackEnd Deploy  
