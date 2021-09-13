@@ -53,7 +53,7 @@ jobs:
 workflows:
   deploy:
     jobs:
-      - Frontend
+      - Frontend_and_deploy
       - Api_build
       - Api_deploy:
           context: aws
