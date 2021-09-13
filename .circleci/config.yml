@@ -18,7 +18,7 @@ jobs:
       - run:
           name: Front-End Build
           command: |
-            npm run frontend:build && aws s3 cp --recursive --acl public-read ./build $AWS_BUCKET_NAME
+            npm run frontend:build && aws s3 cp --recursive --acl public-read ./www $AWS_BUCKET_NAME
 
   Api_build_and_deploy:
     docker:
