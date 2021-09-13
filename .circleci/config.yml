@@ -50,3 +50,9 @@ jobs:
               only:
                 - main
 
+workflows:
+  deploy:
+    jobs:
+      - Frontend
+      - Api
+
