@@ -16,13 +16,15 @@ jobs:
           command: |
             npm run frontend:install
       - run:
+          name: Back-End Install
+          command: |
+            npm run backend:install
+      - run:
           name: Front-End Build
           command: |
             npm run frontend:build
-      - run:
-          name: Deploy App
-          command: |
-            npm run frontend:deploy
+      - run: echo "aws s3 cp --recursive --acl public-read ./build $AWS_BUCKET_NAME"
+
   Api:
     docker:
       - image: "cimg/base:stable"
@@ -38,10 +40,13 @@ jobs:
           name: Back-End Build
           command: |
             npm run backend:build
+      - eb/deploy:
+          context: aws-creds
+          app-dir: ./www
+          application-name: pau-api
+          environment-name: pau-api-dev
+          filters:
+            branches:
+              only:
+                - main
 
-workflows:
-  version: 2
-  Fullstack:
-    jobs:
-      - Frontend
-      - Api
