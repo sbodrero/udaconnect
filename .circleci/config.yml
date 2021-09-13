@@ -35,7 +35,7 @@ jobs:
       - run:
           name: Back-End Build
           command: |
-            npm run backend:build && aws-elastic-beanstalk deploy
+            npm run backend:build && echo "aws-elastic-beanstalk deploy"
 
 workflows:
   deploy:
