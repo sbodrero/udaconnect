@@ -55,11 +55,6 @@ workflows:
     jobs:
       - Frontend_and_deploy
       - Api_build
-      - Api_deploy:
-          context: aws
-          application_name: pau-api
-          default_region: us-east-1
-          deploy:
-            artifact: www/Archive.zip
+      - Api_deploy
 
 
