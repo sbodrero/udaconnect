@@ -4,19 +4,20 @@ CircleCI is used to perform CI/CD pipeline.
 
 ## Configuration For CircleCI
 
-1. ASeparated the workflow in frontend and backend.
-2. Then we install them and checkout.  See below which is in config.yml file:
-    - node/install
-    - node/install-yarn
-    - checkout
-    - aws-cli/setup
-3. Then we would install, build, and deploy on both parts: frontend and backend.  The following is in order so it would run smoothly.
-    - FrontEnd Install
+Separated the workflow in frontend and backend.
+
+1 Frontend:  
+    - node/install  
+    - checkout  
+    - aws-cli/setup  
+    - Front-End Install  
+    - FrontEnd Build    
+    - FrontEnd Deploy  
+
+2 Backend.
     - BackEnd Install
-    - FrontEnd Build
     - BackEnd Build
-    - BackEnd Deploy (need to be this first before FrontEnd Deploy since FrontEnd is depending on API)
-    - FrontEnd Deploy
+    - BackEnd Deploy
 
 ## Schema
 
