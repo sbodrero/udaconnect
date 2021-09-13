@@ -40,7 +40,7 @@ jobs:
           name: Back-End Build
           command: |
             npm run backend:build
-      - run: echo "eb deploy"
+      - run: echo "eb deploy "
 
 workflows:
   deploy:
