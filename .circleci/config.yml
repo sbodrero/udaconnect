@@ -48,7 +48,7 @@ jobs:
       - node/install
       - checkout
       - aws-cli/setup
-      - run: echo "eb deploy"
+      - run: echo "cd udagram-api && eb deploy"
 
 workflows:
   deploy:
